@@ -16,17 +16,7 @@ namespace HW1
         }
 
         static void Main(string[] args)
-        {
-            
-            ThreadPool.SetMaxThreads(3, 3);
-            for (int i = 0; i < 1000000000; i++)
-            {
-                ThreadPool.QueueUserWorkItem(Foo, i);
-            }
-
-
-
-
+        {            
             var thFill = new Thread(() => FillList());
             var thPrint = new Thread(() => PrintList());
             var thRevert = new Thread(() => RevertList());
